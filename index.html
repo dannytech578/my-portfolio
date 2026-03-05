@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My portfolio | Fullstack Developer</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body  style="background-image: url(BG.webp); background-size: cover;">
+
+<header>
+    <div class="logo">DannyTech</div>
+    <nav>
+        <ul id="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+</header>
+
+
+<section id="home" class="hero hidden" >
+    <div class="hero-text">
+        <h1>Hello, I'm <span>Daniel</span></h1>
+        <h2>Frontend & Backend Developer</h2>
+        <p>I build modern, responsive and scalable web applications.</p>
+        <a href="#contact" class="btn">Hire Me</a>
+    </div>
+    <div class="hero-img">
+        <img src="dan.jpg" alt="Daniel">
+    </div>
+</section>
+
+<section id="about" >
+    <h1>About Me</h1>
+    <p class="p1">
+        I am a passionate Fullstack Developer skilled in building <br> high-performance websites,
+        secure backend <br> systems, APIs, and responsive UI designs.
+    </p>
+</section>
+
+<section id="services" >
+    <h2>My Services</h2>
+    <div class="service-container">
+        <div class="service-card">
+            <i class="fas fa-code"></i>
+            <h3>Frontend Development</h3>
+            <p>Modern UI with HTML, CSS, JavaScript & animations.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-server"></i>
+            <h3>Backend Development</h3>
+            <p>Secure backend with Node.js, PHP & databases.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-mobile-alt"></i>
+            <h3>Responsive Design</h3>
+            <p>Mobile-friendly and optimized layout design.</p>
+        </div>
+    </div>
+</section>
+
+
+<section id="portfolio" class="hidden">
+    <h2>My Projects</h2>
+
+    <div class="carousel">
+
+        <button class="prev">&#10094;</button>
+
+        <div class="carousel-track-container">
+            <div class="carousel-track">
+
+                <div class="carousel-slide">
+                    <img src="project5.jpg" alt="">
+                </div>
+
+                <div class="carousel-slide">
+                    <img src="project4.jpg" alt="">
+                </div>
+
+                <div class="carousel-slide">
+                    <img src="project3.jpg" alt="">
+                </div>
+
+                 <div class="carousel-slide">
+                    <img src="project1.png" alt="">
+                </div>
+
+                 <div class="carousel-slide">
+                    <img src="project2.png" alt="">
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <button class="next">&#10095;</button>
+
+    </div>
+</section>
+
+
+<section id="contact" >
+    <h2>Contact Me</h2>
+    <p><i class="fas fa-map-marker-alt"></i> Ojoo, Ibadan, Nigeria</p>
+    <p><i class="fas fa-phone"></i> +234 806 007 5227</p>
+        <p><i class="fas fa-phone"></i> +234 704 832 2318</p>
+    <p><i class="fas fa-envelope"></i> ukanah6@gmail.com</p>
+</section>
+
+<a href="https://wa.me/2348060075227" class="whatsapp" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<footer>
+    <p>© 2026 DannyTech | All Rights Reserved</p>
+</footer>
+
+<script>
+
+  // Mobile Menu
+const toggle = document.querySelector(".menu-toggle");
+const menu = document.querySelector("#menu");
+
+toggle.addEventListener("click", () => {
+    menu.classList.toggle("show");
+});
+
+// Scroll Animation
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+document.querySelectorAll(".hidden").forEach(el => {
+    observer.observe(el);
+});
+
+
+// Carousel
+
+const track = document.querySelector('.carousel-track');
+const slides = Array.from(track.children);
+const nextButton = document.querySelector('.next');
+const prevButton = document.querySelector('.prev');
+
+let currentIndex = 0;
+
+function updateCarousel() {
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+nextButton.addEventListener('click', () => {
+    if (currentIndex < slides.length - 1) {
+        currentIndex++;
+    } else {
+        currentIndex = 0;
+    }
+    updateCarousel();
+});
+
+prevButton.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+    } else {
+        currentIndex = slides.length - 1;
+    }
+    updateCarousel();
+});
+
+</script>
+<!-- <script src="script.js"></script> -->
+</body>
+</html>
