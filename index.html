@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My portfolio | Fullstack Developer</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">DannyTech</div>
+    <nav>
+        <ul id="menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+</header>
+
+
+<section id="home" class="hero hidden" >
+     <div class="hero-text">
+        <h3 style="padding-right: 230px;">Hello, I'm </h3>
+        <h1>Front-End <br> <span>Developer.</span></h1><br>
+        <p>I build modern and responsive website using <br> HTML, CSS and JavaScript.</p>
+        <a href="#contact" class="btn">Hire Me</a>
+        <div>
+     <div class="social-icons">
+        <a href="https://www.tiktok.com/@Ukanahdaniel948" target="_blank">
+            <img src="tiktok-logo_1131634-487.avif" alt="TikTok">
+        </a>
+
+        <a href="https://www.facebook.com/Ukanah Daniel Eneye" target="_blank">
+            <img src="facebook-logo_1080029-107.avif" alt="Facebook">
+        </a>
+
+        <a href="https://www.instagram.com/udanny6" target="_blank">
+            <img src="instagram-icon-png-image_6315974.png" alt="Instagram">
+        </a>
+
+        <a href="https://twitter.com/@danny_dan29928" target="_blank">
+            <img src="X_icon.svg.png" alt="Instagram">
+        </a>
+</div>
+        </div>
+    </div>
+    <div class="hero-img">
+        <img src="dan.jpg" alt="Daniel">
+    </div>
+</section>
+
+<section id="about" >
+    <h1>About Me</h1>
+    <p class="p1">
+       I’m a frontend developer focused on building fast, responsive, and accessible web apps. I work with HTML, CSS, JavaScript, React, and Next.js, turning designs into clean, maintainable code. <br><br> 
+
+I care about performance, smooth UX, and making things work great on every device. Right now I’m sharpening my skills in [TypeScript / Tailwind / state management] and always learning new tools in the React ecosystem..
+    </p>
+</section>
+
+<section id="services" >
+    <h2>My Services</h2>
+    <div class="service-container">
+        <div class="service-card">
+            <div class="frontend">
+              <img src="html.png" alt="" width="55px" height="auto">
+            <h3>HTML</h3>
+          </div>
+            <p>Structuring web content using semantic and clean HTML.</p>
+        </div>
+
+        <div class="service-card">
+           <div class="frontend">
+              <img src="css.png" alt="" width="55px" height="auto">
+            <h3>CSS</h3>
+          </div>
+            <p>Styling responsive and mordern website with CSS.</p>
+        </div>
+
+        <div class="service-card">
+           <div class="frontend">
+              <img src="java.png" alt="" width="40px" height="auto">
+            <h3>JAVASCRIPT</h3>
+          </div>
+            <p>Adding interactivity and dynamic functionality with JAVASCRIPT</p>
+        </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="portfolio" class="hidden">
+    <h2>My Projects</h2>
+
+    <div class="carousel">
+
+        <button class="prev">&#10094;</button>
+
+        <div class="carousel-track-container">
+            <div class="carousel-track">
+
+                <div class="carousel-slide">
+                    <img src="project4.jpg" alt="">
+                </div>
+
+                <div class="carousel-slide">
+                    <img src="project5.jpg" alt="">
+                </div>
+
+                <div class="carousel-slide">
+                    <img src="project3.jpg" alt="">
+                </div>
+
+                 <div class="carousel-slide">
+                    <img src="project2.png" alt="">
+                </div>
+
+                 <div class="carousel-slide">
+                    <img src="project1.png" alt="">
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <button class="next">&#10095;</button>
+
+    </div>
+</section>
+
+
+<section id="contact" class="contact">
+<div>
+        <h1>Let's <span>Connect</span></h1><br>
+        <p>i'm open to opportunities and interested in <br> working on exciting projects</p><br><br>
+    <p><i class="fas fa-map-marker-alt"></i> Ojoo, Ibadan, Nigeria</p><br>
+    <p><i class="fas fa-phone"></i> +234 806 007 5227</p><br>
+        <p><i class="fas fa-phone"></i> +234 704 832 2318</p><br>
+    <p><i class="fas fa-envelope"></i> ukanah6@gmail.com</p><br>
+</div>
+
+<div id="contact" class="message">
+  <h1 style="color: white;">Send Me a <span>Message</span></h1>
+  <form id="contactForm">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+</section>
+
+<a href="https://wa.me/2348060075227" class="whatsapp" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<footer>
+    <p>© 2026 DannyTech | All Rights Reserved</p>
+</footer>
+
+<script>
+
+  // Mobile Menu
+const toggle = document.querySelector(".menu-toggle");
+const menu = document.querySelector("#menu");
+
+toggle.addEventListener("click", () => {
+    menu.classList.toggle("show");
+});
+
+// Scroll Animation
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+document.querySelectorAll(".hidden").forEach(el => {
+    observer.observe(el);
+});
+
+
+// Carousel
+
+const track = document.querySelector('.carousel-track');
+const slides = Array.from(track.children);
+const nextButton = document.querySelector('.next');
+const prevButton = document.querySelector('.prev');
+
+let currentIndex = 0;
+
+function updateCarousel() {
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+nextButton.addEventListener('click', () => {
+    if (currentIndex < slides.length - 1) {
+        currentIndex++;
+    } else {
+        currentIndex = 0;
+    }
+    updateCarousel();
+});
+
+prevButton.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+    } else {
+        currentIndex = slides.length - 1;
+    }
+    updateCarousel();
+});
+
+</script>
+<!-- <script src="script.js"></script> -->
+</body>
+</html>
